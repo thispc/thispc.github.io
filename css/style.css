@@ -1,0 +1,179 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Slab';
+#section1 {padding-top:50px;height:800px;color: #fff; background-color: #001f3f;
+}
+  #section2 {padding-top:50px;padding-bottom:50px;color: #fff; background-color: #003526;}
+  #section3 {padding-top:50px;padding-bottom:50px;color: #fff; background-color: #ff9800;}
+#spansection {padding-top:50px;padding-bottom:80px;color: #fff; background-color: #FF4136;}
+
+p{
+  
+  color: lime; 
+  font-family: "Courier";
+  font-size: 20px;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+  animation: type 2s steps(60, end); 
+}
+
+p:nth-child(2){
+  animation: type2 4s steps(60, end);
+}
+p:nth-child(3){
+  animation: type3 6s steps(60, end);
+}
+p:nth-child(4){
+  animation: type4 8s steps(60, end);
+}
+
+p a{
+  color: lime;
+  text-decoration: none;
+}
+#blk
+{
+  animation: blink 1s infinite;
+}
+
+@keyframes type{ 
+  from { width: 0; } 
+} 
+
+@keyframes type2{
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100; } 
+} 
+@keyframes type3{
+  0%{width: 0;}
+  66%{width: 0;}
+  100%{ width: 100; } 
+} 
+@keyframes type4{
+  0%{width: 0;}
+  75%{width: 0;}
+  100%{ width: 100; } 
+} 
+
+@keyframes blink{
+  to{opacity: .0;}
+}
+
+body
+{
+  position :relative;
+  background-color: #000;
+  color: #FF3;
+  font-family: 'Roboto Slab', serif;
+  overflow-x:hidden;
+}
+.front{
+  padding-top:10px;
+  color:lime;
+  font-family: "Courier";
+  font-size:20px;
+}
+
+div.img {
+    margin: 5px;
+   
+    float: center;
+    width: 400px;
+    border-radius:3%;
+}
+
+div.img:hover {
+    
+}
+
+div.img img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+     font-family: 'Roboto Slab', serif;
+     color:silver;
+}
+.black{
+  background-color:#111111;
+  
+  
+}
+.inside{
+  border: 10px solid #000;
+  border-radius:3%
+}
+.pad{
+  padding-left:50px;
+}
+.train{
+
+  width:500px;
+  height:250px;
+  animation:blink 0.8s infinite;
+}
+.para{
+  font-size:20px;
+  font-family: 'Roboto Slab', serif;
+  color:white;
+}
+.button {
+  color: #fff;
+  border:solid 2px #fff;
+  border-radius:50%;
+  display:inline-block;
+  width:50px;
+  height:50px;
+  text-align:center;
+  font-size:20px;
+  line-height:48px;
+  transition:all .3s ease-in-out;
+  &:hover {
+    border:solid 2px #fff;
+    color:$fargglad;
+    background: #fff;
+  }
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+color: silver;  /*Sets the text hover color on navbar*/
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
+ a:hover, .navbar-default .navbar-nav > .active > a:focus {
+color: white; /*BACKGROUND color for active*/
+background-color: #09336E;
+}
+
+  .navbar-default {
+    background-color: black;
+    border-color: black;
+}
+
+  .dropdown-menu > li > a:hover,
+   .dropdown-menu > li > a:focus {
+    color: #262626;
+   text-decoration: none;
+  background-color: #66CCFF;  /*change color of links in drop down here*/
+   }
+
+ .nav > li > a:hover,
+ .nav > li > a:focus {
+    text-decoration: none;
+    background-color: grey; /*Change rollover cell color here*/
+  }
+
+
+  .navbar-default .navbar-nav > li > a {
+   color: white; /*Change active text color here*/
+    }
+.tablet{
+  border:50px;
+  border-style:solid;
+  border-color:#111111;
+  background-color:#000;
+  border-radius:5%
+}
