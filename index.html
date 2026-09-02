@@ -1,240 +1,64 @@
-<!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    
-    
-    
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulkit Chawla</title>
+<meta name="description" content="Pulkit Chawla, AI and platform engineer in Eindhoven, Netherlands. Six years on cloud data platforms, MSc Data Science and AI at TU/e, agent systems with real security boundaries.">
+<style>
+  :root { --bg:#fbfaf7; --fg:#1d1d1b; --muted:#5f5e58; --line:#e4e1d8; --accent:#1f5f3a; --card:#ffffff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#141412; --fg:#ecebe6; --muted:#a9a79f; --line:#2b2b27; --accent:#7dd3a0; --card:#1c1c19; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:56px 20px 72px; }
+  h1 { font-size:2rem; margin:0 0 4px; letter-spacing:-0.01em; }
+  .tag { color:var(--muted); margin:0 0 18px; }
+  .links a { margin-right:14px; color:var(--accent); text-decoration:none; font-weight:600; }
+  .links a:hover { text-decoration:underline; }
+  h2 { font-size:1.05rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:40px 0 12px; }
+  p { margin:0 0 12px; }
+  ul { padding-left:20px; margin:0; }
+  li { margin-bottom:8px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:10px; }
+  .card a { color:var(--fg); font-weight:700; text-decoration:none; }
+  .card a:hover { color:var(--accent); }
+  .card small { display:block; color:var(--muted); margin-top:2px; }
+  .cv { display:inline-block; margin-top:6px; padding:10px 16px; border-radius:8px; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; }
+  footer { margin-top:48px; color:var(--muted); font-size:.9rem; border-top:1px solid var(--line); padding-top:16px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Pulkit Chawla</h1>
+  <p class="tag">AI and platform engineer · Eindhoven, Netherlands · full Dutch work authorisation, available immediately</p>
+  <p class="links">
+    <a href="https://github.com/thispc">GitHub</a>
+    <a href="https://linkedin.com/in/pulkitchawla11">LinkedIn</a>
+    <a href="mailto:pulkitchawl@gmail.com">Email</a>
+  </p>
 
-        <link rel="stylesheet" href="css/style.css">
+  <p>I build the load-bearing parts of AI systems: the platform, the pipeline, and the gate that decides what ships.</p>
 
-    
-    
-    
-  </head>
+  <h2>Background</h2>
+  <ul>
+    <li><strong>Six years on cloud data platforms.</strong> Cluster orchestration for Hadoop, Spark, Presto and Hive inside customers' AWS, Azure and OCI accounts at Qubole; sole owner of the customer console and the Hive/HBase distributions of Oracle Cloud Big Data Service, with P0 on-call alongside the US teams.</li>
+    <li><strong>MSc Data Science and AI, TU Eindhoven (2025).</strong> Thesis: the MLOps platform for IMAGEN, a Dutch government-funded animal-welfare programme with Wageningen University and Hendrix Genetics. FAIR data ingestion, ClearML + SLURM + PiCaS training in Singularity containers, a web UI and API so researchers never log into the HPC cluster.</li>
+    <li><strong>2026: agent systems with real boundaries</strong>, built and run on my own hardware.</li>
+  </ul>
 
-  <body>
+  <h2>Projects</h2>
+  <div class="card"><a href="https://github.com/thispc/claude-agents-developer-team">devteam</a><small>Verification kernel for agent-written software. Modules are contracts hashed into identity; code ships only after passing in a network-less container, twice, against held-out tests it never saw. The verifier is the compiler.</small></div>
+  <div class="card"><a href="https://github.com/thispc/humanhands">HumanHands</a><small>Native Swift macOS computer-use agent: Accessibility-tree perception, human-like cursor paths, Keychain-backed secrets that reach the model only as placeholders. 135 tests, 10 SwiftPM targets.</small></div>
+  <div class="card"><a href="https://github.com/thispc/trader-automata">trader-automata</a><small>Multi-account order fan-out platform: idempotent fan-out over an event-sourced ledger, role-based auth, encrypted credentials, paper → connect → live staging. FastAPI + Next.js.</small></div>
+  <div class="card"><a href="https://github.com/thispc/nanoclaw">nanoclaw (fork)</a><small>Personal email agent on the NanoClaw runtime: tool-less reader model for raw mail, sanitised digests for the acting agent, one-tap approvals enforced in host code. Added an iMessage channel and a portable knowledge base.</small></div>
 
-    <!-- Made By pulkit Chawla -->
+  <h2>Stack</h2>
+  <p>Python, TypeScript, Java, Swift · FastAPI, Spring, Node.js · LLM agents, RAG, PyTorch · Hadoop, Spark, Presto, Hive · AWS, Azure, OCI, Docker · Jenkins, TeamCity, CI/CD · SLURM, Singularity</p>
 
+  <h2>CV</h2>
+  <p><a class="cv" href="https://github.com/thispc/thispc/raw/main/cv/Pulkit_Chawla_Resume.pdf">Download CV (PDF)</a></p>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#abc">
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-        
-      </button>
-      <a class="navbar-brand" href="#">thisPc</a>
-      
-    </div>
-    
-      <div class="collapse navbar-collapse" id="abc">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#section1">About Me</a></li>
-          <li><a href="#section2">Portfolio</a></li>
-          <li><a href="#section3">Contact</a></li>
-          
-        </ul>
-            
-        
-    </div>
-    
-  </div>
-  
-</nav>
-<div class="container-fluid" id="section1" >
-  <div class="row">
-    <div class="col-xs-12"><br></div>
-    <div class="col-xs-12"><br></div>
- <div class="col-xs-1"></div>
-  <div class="col-xs-10 row tablet">
-  <div class="col-xs-12"><br></div>
-    <div class="col-xs-3 text-right  front">pulkit@thisPc:~$</div>
-    <div class="col-xs-9">
-<p>this is Pulkit Chawla. </p> 
-  <p>i am a Computer enthusiast and Web developer</p> 
-  <p>loves networking and application of algorithms</p>
-  <p>Key interest in network security analysing<span id="blk">_</span></p>
- </div>
-  
-  <div class="col-xs-12"><br></div>
-  <div class="col-xs-12"><br></div>
-  <div class="col-xs-12"><br></div>
-  <div class="col-xs-12"><br></div>
-  <div class="col-xs-12 text-center">
-  <img class="train" src="http://i.imgur.com/eTz9CuO.png">  
-  </div>
-</div>
-    <div class="col-xs-1"></div>
-  </div>
-  </div>
-<div class="container-fluid row text-center" id="section2" >
-  <h1>PortFolio</h1>
-  
-  
-   <div class="col-xs-2"></div>
-  <div class="col-xs-8 row pad">
-      <div class="img col-xs-6 black">
-  
-    <img class="inside" src="http://i.imgur.com/qXFLiOG.png" alt="Fjords" width="300" height="200">
-  
-  <div class="desc">Tribute Page</div>
-</div>
-    <div class="img col-xs-6 black">
-  
-    <img class="inside" src="http://i.imgur.com/ORdZE6z.png" alt="Fjords" width="300" height="200">
-  
-  <div class="desc">Wikipedia Search</div>
-</div>
-    <div class="img col-xs-6 black">
-  
-    <img class="inside" src="http://i.imgur.com/YMdnt1x.png" alt="Fjords" width="300" height="200">
-  
-  <div class="desc">Weather App</div>
-</div>
-    <div class="img col-xs-6 black">
-  
-    <img class="inside" src="http://i.imgur.com/pz9rKHP.png" alt="Fjords" width="300" height="200">
-  
-  <div class="desc">Random Quote Machine</div>
-</div>
-    <div class="img col-xs-6 black">
-  
-    <img class="inside" src="http://i.imgur.com/RC3Tqvm.png" alt="Fjords" width="300" height="200">
-  
-  <div class="desc">Twitch Streamers</div>
-</div>
-    
-    <div class="img col-xs-6 black">
-  
-    <img class="inside" src="http://i.imgur.com/XIggWAK.png" alt="Fjords" width="300" height="200">
-  
-  <div class="desc">Local Network Search Engine</div>
-</div>
-    
-     </div>
- </div>
-  
-  
-<!--   Section 2 ended -->
-  
-  
-  
-  <div class="container-fluid" id="section3">
-  <form action="https://formspree.io/thispc127@gmail.com" method="POST">
-    <div class="row">
-     <div class="col-xs-12 text-center">
-       <h1>Contact Me</h1>
-       </div>
-      <div class="form-group col-xs-12 row">
-  <div class="col-xs-4 text-right para">
-        First Name  
-  </div>
-        <div class="col-xs-4 inputGroupContainer">
-  
-          <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  
-            <input  name="name" placeholder="First Name" class="form-control"  type="text">
-    </div>
-  </div>
-        
-        <div class="col-xs-4"></div>
-        
-</div>
-      
-      
-      
-      <div class="form-group col-xs-12 row">
-  <div class="col-xs-4 text-right para">
-        Second Name  
-  </div>
-        <div class="col-xs-4 inputGroupContainer">
-  
-          <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  
-            <input  name="second_name" placeholder="Second Name" class="form-control"  type="text">
-    </div>
-  </div>
-        
-        <div class="col-xs-4"></div>
-        
-</div>
-    
-      
-      
-      <div class="form-group col-xs-12 row">
-  <div class="col-xs-4 text-right para">
-        E-Mail  
-  </div>
-        <div class="col-xs-4 inputGroupContainer">
-  
-          <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  
-            <input  name="_replyto" placeholder="Email Address" class="form-control"  type="email">
-    </div>
-  </div>
-        
-        <div class="col-xs-4"></div>
-        
-</div>
-      
-      
-      <div class="form-group col-xs-12 row">
-  <div class="col-xs-4 text-right para">
-        Message  
-  </div>
-        <div class="col-xs-4 inputGroupContainer">
-  
-          <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-  
-            <textarea class="form-control" name="message" placeholder="Message"></textarea>
-    </div>
-  </div>
-        
-        <div class="col-xs-4"></div>
-        
-</div>
-      <div class="col-xs-12 text-center">
-        <button type="submit" class="btn btn-danger" value="send" >Send <span class="glyphicon glyphicon-send"></span></button>
-        </div>
-      
-      
-      
-      
-    </div>
-    </form>
-    </div>
-    
-    <div id="spansection" class="row">
-      <div class="col-xs-12 text-center">
-      <h3>Made by Pulkit</h3>
-        </div>
-      <div class="col-xs-12 text-center">
-       
-        <a class="button" target='_blank' href="https://in.linkedin.com/in/pulkitchawla11
-"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-        <a target='_blank' class="button" href="https://github.com/thispc"><i class="fa fa-github" aria-hidden="true"></i></a>
-        <a target='_blank' class="button" href="https://codepen.io/thispc11/"><i class="fa fa-codepen" aria-hidden="true"></i></a>
-        </div>
-  
-   </div>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-
-    
-    
-    
-    
-  </body>
+  <footer>Pulkit Chawla · Eindhoven · pulkitchawl@gmail.com · +31 6 45 76 94 65</footer>
+</main>
+</body>
 </html>

@@ -1,2 +1,1 @@
-# thispc (Pulkit Chawla)
-About Me 
+Personal site: https://pulkitchawla.me
