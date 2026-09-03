@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pulkit Chawla</title>
-<meta name="description" content="Pulkit Chawla, AI and platform engineer in Eindhoven, Netherlands. Six years on cloud data platforms at Oracle and Qubole, MSc Data Science and AI at TU Eindhoven, agent systems with real security boundaries.">
+<meta name="description" content="Pulkit Chawla, AI and platform engineer in Eindhoven, Netherlands. Six years on cloud data platforms at Oracle and Qubole, MSc Data Science and AI at TU Eindhoven, four agent systems he built and runs himself.">
 <meta name="author" content="Pulkit Chawla">
 <meta name="theme-color" content="#0f1210">
 <link rel="canonical" href="https://pulkitchawla.me/">
@@ -80,7 +80,7 @@
         <p class="eyebrow"><span class="dot" aria-hidden="true"></span>AI and platform engineer, Eindhoven, Netherlands</p>
         <h1>Pulkit Chawla</h1>
         <p class="lede">I build the load-bearing parts of AI systems: the platform, the pipeline, <em>the gate that decides what ships.</em></p>
-        <p class="sub">Six years on cloud data platforms at Oracle and Qubole, owning services outright. Then an MSc in Data Science and AI at TU Eindhoven. In 2026, four agent systems with real security boundaries.</p>
+        <p class="sub">Six years on cloud data platforms at Oracle and Qubole, owning services outright. Then an MSc in Data Science and AI at TU Eindhoven. In 2026, four agent systems I built and run myself.</p>
         <div class="actions">
           <a class="btn primary" href="https://github.com/thispc/thispc/raw/main/cv/Pulkit_Chawla_Resume.pdf">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg>
@@ -200,12 +200,12 @@
           <div class="card-head">
             <div>
               <h3><a href="https://github.com/thispc/devteam">devteam</a></h3>
-              <p class="kicker">Contract-bound microbot harness for agent-written software</p>
+              <p class="kicker">A harness of microbots with contracts</p>
             </div>
             <a class="repo" href="https://github.com/thispc/devteam" aria-label="devteam on GitHub"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-gh"/></svg><span class="repo-name">thispc/devteam</span></a>
           </div>
-          <p>Every module is a contract (interface, tests, pinned toolchain) hashed into its identity. Agent-written code is admitted only after it passes in a network-less Docker container, run twice with transcripts diffed, plus held-out tests the author never sees.</p>
-          <p class="hard"><b>What is hard:</b> once an agent has read the tests it is judged by, those tests stop being an unbiased signal. The held-out vaults caught real bugs the visible suite had passed.</p>
+          <p>My first version rotted. The agents kept editing their own code until every test passed, and afterwards nobody could extend it. You cannot ask code to grade its own homework, so I moved the judging out of reach. The contract is hashed into the module's identity, the code runs in a container with no network, twice, and it faces tests it never saw.</p>
+          <p class="hard"><b>What is hard:</b> once an agent has read the tests it is judged by, those tests stop telling you anything. The held-out ones caught real bugs the visible suite had passed. I had also built an excellent courtroom that never held a trial, so I ran one: an AI manager hired its own team and shipped through the gate with no help from me.</p>
           <p class="stat">356 commits in an end-to-end trial with zero human interventions. Cache hit 45 ms, rebuild 6.3 s.</p>
           <ul class="tags"><li>Node.js</li><li>TypeScript</li><li>Docker</li><li>Claude Agent SDK</li></ul>
         </li>
@@ -213,12 +213,12 @@
           <div class="card-head">
             <div>
               <h3><a href="https://github.com/thispc/humanhands">HumanHands</a></h3>
-              <p class="kicker">Native macOS computer-use agent</p>
+              <p class="kicker">An AI that operates a Mac the way a person does</p>
             </div>
             <a class="repo" href="https://github.com/thispc/humanhands" aria-label="HumanHands on GitHub"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-gh"/></svg><span class="repo-name">thispc/humanhands</span></a>
           </div>
-          <p>Perceives the screen through the macOS Accessibility tree (local, pixel-exact, no screenshots sent to the model), reasons with Claude, and drives the real cursor along human-like paths with human typing cadence.</p>
-          <p class="hard"><b>What is hard:</b> keeping secrets out of the model structurally. Credentials live in the Keychain and reach the model only as placeholders substituted at the last instant. A domain-verified gate refuses to type a secret on an unconfirmed site.</p>
+          <p>It reads the screen through the macOS accessibility tree rather than screenshots, so nothing leaves the machine and the coordinates are exact. Then it moves the real cursor along a human path instead of teleporting it, and types at human speed.</p>
+          <p class="hard"><b>What is hard:</b> keeping passwords away from the model without making it useless. They stay in the Keychain and reach it only as placeholders, swapped in at the last instant, and it refuses to type one until it has checked the site is the real one.</p>
           <p class="stat">Fully native Swift across 10 SwiftPM targets. 135 tests run off-device.</p>
           <ul class="tags"><li>Swift</li><li>SwiftUI</li><li>Accessibility API</li><li>CoreGraphics</li><li>Keychain</li><li>Claude</li></ul>
         </li>
@@ -230,8 +230,8 @@
             </div>
             <a class="repo" href="https://github.com/thispc/nanoclaw" aria-label="nanoclaw fork on GitHub"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-gh"/></svg><span class="repo-name">thispc/nanoclaw</span></a>
           </div>
-          <p>A tool-less reader model is the only component that touches raw email. The acting agent sees only sanitised digests, and every outbound action stops at a one-tap approval that sends exactly the pre-created draft, enforced in host code.</p>
-          <p class="hard"><b>What is hard:</b> any text the agent reads can carry instructions. The defence lives in the data flow: the component that reads mail has no tools, and the component with tools never reads mail.</p>
+          <p>I wanted something that reads my email and acts for me from my phone. The popular option had critical remote-execution bugs and a skill marketplace where about one package in eight was malicious, so I built a small one I could actually audit.</p>
+          <p class="hard"><b>What is hard:</b> anyone who emails me can try to talk the agent into something. So the part that reads mail has no tools at all, and the part with tools never sees raw mail. Anything going out stops at a one-tap approval that sends exactly the draft I saw.</p>
           <p class="stat">Added an iMessage channel and a plain-file knowledge base (16k lines). Three daemons, 24/7 on my own hardware.</p>
           <ul class="tags"><li>TypeScript</li><li>Node.js</li><li>Claude Agent SDK</li><li>Docker</li><li>SQLite</li></ul>
         </li>
@@ -239,12 +239,12 @@
           <div class="card-head">
             <div>
               <h3><a href="https://github.com/thispc/trader-automata">trader-automata</a></h3>
-              <p class="kicker">Multi-account order fan-out platform</p>
+              <p class="kicker">One order, many brokerage accounts</p>
             </div>
             <a class="repo" href="https://github.com/thispc/trader-automata" aria-label="trader-automata on GitHub"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-gh"/></svg><span class="repo-name">thispc/trader-automata</span></a>
           </div>
-          <p>Mirrors one trade decision across many brokerage accounts at once. A pluggable broker layer on official SDKs, idempotent fan-out over an append-only event-sourced ledger, role-based multi-tenant auth, and Fernet-encrypted credentials with TOTP.</p>
-          <p class="hard"><b>What is hard:</b> partial failure is normal. One account's rejection must never roll back another's fill, so every child order carries an idempotency key and every transition is an appended event.</p>
+          <p>One trade decision mirrored across many brokerage accounts at once, which is what the copy-trading desks in India run. It turned out to be a distributed-systems and compliance problem rather than a trading one. The moat is reliability and traceability, not clever algorithms.</p>
+          <p class="hard"><b>What is hard:</b> partial failure is normal. One account's rejection must never undo another's fill, so every child order carries an idempotency key and every step is appended to a ledger rather than overwritten. India also requires every API order to come from one static IP registered per client.</p>
           <p class="stat">Paper, connect and live stages. Deployed behind HTTPS on a static IP with a live Angel One account. 33 tests.</p>
           <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>Next.js</li><li>TypeScript</li><li>Docker</li></ul>
         </li>
