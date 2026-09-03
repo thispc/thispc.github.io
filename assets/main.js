@@ -147,6 +147,10 @@
       }
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
     for (var m = 0; m < items.length; m++) { io.observe(items[m]); }
+    /* Safety net: whatever the observer missed (print, previews, crawlers, no scroll) shows after a moment. */
+    setTimeout(function () {
+      for (var k = 0; k < items.length; k++) { items[k].classList.add("in"); }
+    }, 1200);
   }
 
   /* Nav: mark the section currently in view. */
