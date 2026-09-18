@@ -345,3 +345,15 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .tl-item { grid-template-columns: 140px 1fr; gap: 0 48px; }
   .tl-item::before { left: 165px; }
 }
+
+/* Diagrams (18 Sep 2026): one drawn figure per project, and one in the hero, instead of the typed build log. */
+.hero-figure { padding: 14px 14px 10px; margin: 0; }
+.hero-figure figcaption { font-family: var(--mono); font-size: 11.5px; color: var(--muted); padding: 6px 4px 0; }
+.diagram { display: block; width: 100%; height: auto; }
+.fig { margin: -6px -6px 2px; padding: 10px 10px 6px; background: var(--bg-3); border: 1px solid var(--line); border-radius: calc(var(--radius) - 4px); }
+@media (min-width: 880px) { .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.fig-shot { padding: 0; overflow: hidden; }
+.fig-shot img { display: block; width: 100%; height: auto; }
+.hero-shot { padding: 0; }
+.hero-shot img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--line); }
+.hero-shot figcaption { padding: 8px 12px 10px; }

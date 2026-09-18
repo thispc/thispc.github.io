@@ -60,8 +60,8 @@
     </a>
     <nav class="nav" aria-label="Sections">
       <a href="#now">Now</a>
-      <a href="#work">Work</a>
       <a href="#projects">Projects</a>
+      <a href="#work">Work</a>
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
@@ -79,8 +79,8 @@
       <div>
         <p class="eyebrow"><span class="dot" aria-hidden="true"></span>AI and platform engineer, Eindhoven, Netherlands</p>
         <h1>Pulkit Chawla</h1>
-        <p class="lede">I build the load-bearing parts of AI systems: the platform, the pipeline, <em>the gate that decides what ships.</em></p>
-        <p class="sub">I spent nearly six years on cloud data platforms at Oracle and Qubole, owning services outright, then took an MSc in Data Science and AI at TU Eindhoven. Since then I have built and run four agent systems of my own.</p>
+        <p class="lede">I build AI systems that run in production: <em>the agents, the platform under them, and the tests that keep them honest.</em></p>
+        <p class="sub">Six years on cloud data platforms at Oracle and Qubole, owning services end to end, then an MSc in Data Science and AI at TU Eindhoven. In 2026 I built and run four agent systems of my own; they are below, with their code.</p>
         <div class="actions">
           <a class="btn primary" href="https://github.com/thispc/thispc/raw/main/cv/Pulkit_Chawla_Resume.pdf">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg>
@@ -94,15 +94,7 @@
         </div>
       </div>
 
-      <div class="panel" aria-label="A devteam build verifying agent-written code, one of my projects">
-        <div class="panel-head">
-          <span class="title" aria-hidden="true">devteam verify</span>
-          <span class="path" aria-hidden="true">modules/run-tests</span>
-          <span class="state" id="log-state" aria-hidden="true">verifying</span>
-          <button class="replay" id="log-replay" type="button" aria-label="Replay the build log">replay</button>
-        </div>
-        <pre class="log" id="log" aria-hidden="true"></pre>
-      </div>
+      <figure class="panel hero-figure hero-shot"><img src="/assets/img/devteam-team-canvas.jpg" alt="devteam: an AI team (smith, matcher, scribe) on its canvas, with the manager's chat on the right" width="1600" height="913" decoding="async"><figcaption>devteam, one of the four: an AI team on its canvas, the manager's chat on the right.</figcaption></figure>
     </div>
   </section>
 
@@ -121,9 +113,74 @@
     </div>
   </section>
 
+  <section class="section" id="projects">
+    <div class="wrap reveal">
+      <div class="section-head"><span class="num">02</span><h2>Projects</h2></div>
+      <p class="intro">Four systems built and run in 2026. Each one has a rule that is enforced in code rather than in a prompt: what may ship, what the model may see, what may be sent.</p>
+      <ul class="projects">
+        <li class="card">
+          <figure class="fig fig-shot"><img src="/assets/img/devteam-app-run.jpg" alt="A weather app built by the AI team, running: each pipeline piece (parse-place, geocode, forecast, respond) shown with its output and whether it was cached or fetched" width="1600" height="913" loading="lazy" decoding="async"></figure>
+          <div class="card-head">
+            <div>
+              <h3><a href="https://github.com/thispc/devteam">devteam</a></h3>
+              <p class="kicker">AI agents write the software; a separate checker decides if it is good enough</p>
+            </div>
+            <a class="repo" href="https://github.com/thispc/devteam" aria-label="devteam on GitHub"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-gh"/></svg><span class="repo-name">thispc/devteam</span></a>
+          </div>
+          <p>Each module is defined by a contract: the functions it must expose and what they take and return. An agent writes the code, the code is built in a container with no network, twice, and it is judged by tests the agent never saw. Only then does it ship.</p>
+          <p class="hard"><b>The hard part:</b> once an agent has read the tests it is graded by, those tests stop telling you anything. The hidden ones caught real bugs the visible suite had passed.</p>
+          <p class="stat">Ran end to end with no human intervention: an AI manager derived the contracts, delegated the work and shipped every module through the checker. A content-addressed cache turns a repeat build into a 45 ms hit instead of a 6.3 s rebuild.</p>
+          <ul class="tags"><li>Node.js</li><li>TypeScript</li><li>Docker</li><li>Claude Agent SDK</li></ul>
+        </li>
+        <li class="card">
+          <figure class="fig"><svg class="diagram" viewBox="0 0 520 190" role="img" aria-label="The model reads the screen through the accessibility tree and drives the real cursor; secrets stay in the Keychain" font-family="var(--mono)"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker></defs><rect x="16" y="40" width="120" height="44" rx="7" fill="var(--bg-3)" stroke="var(--line-2)" stroke-width="1.2"/><text x="76.0" y="60.0" text-anchor="middle" font-size="12" fill="var(--fg)">Model</text><text x="76.0" y="74.0" text-anchor="middle" font-size="10.5" fill="var(--muted)">decides the next step</text><line x1="136" y1="62" x2="184" y2="62" stroke="var(--muted)" stroke-width="1.2" marker-end="url(#ah)"/><rect x="184" y="40" width="156" height="44" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2"/><text x="262.0" y="60.0" text-anchor="middle" font-size="12" fill="var(--fg)">Accessibility tree</text><text x="262.0" y="74.0" text-anchor="middle" font-size="10.5" fill="var(--muted)">reads the screen, no screenshots</text><line x1="340" y1="62" x2="388" y2="62" stroke="var(--muted)" stroke-width="1.2" marker-end="url(#ah)"/><rect x="388" y="40" width="116" height="44" rx="7" fill="var(--bg-3)" stroke="var(--line-2)" stroke-width="1.2"/><text x="446.0" y="60.0" text-anchor="middle" font-size="12" fill="var(--fg)">Real cursor</text><text x="446.0" y="74.0" text-anchor="middle" font-size="10.5" fill="var(--muted)">human-speed input</text><line x1="446" y1="84" x2="446" y2="122" stroke="var(--muted)" stroke-width="1.2" marker-end="url(#ah)"/><rect x="388" y="122" width="116" height="36" rx="7" fill="var(--bg-3)" stroke="var(--line-2)" stroke-width="1.2"/><text x="446.0" y="144.0" text-anchor="middle" font-size="12" fill="var(--fg)">The app</text><rect x="16" y="122" width="120" height="36" rx="7" fill="var(--bg-3)" stroke="var(--line-2)" stroke-width="1.2"/><text x="76.0" y="144.0" text-anchor="middle" font-size="12" fill="var(--fg)">Keychain</text><line x1="136" y1="140" x2="184" y2="140" stroke="var(--muted)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ah)"/><rect x="184" y="122" width="156" height="36" rx="7" fill="var(--bg-3)" stroke="var(--line-2)" stroke-width="1.2"/><text x="262.0" y="144.0" text-anchor="middle" font-size="12" fill="var(--fg)">placeholders only</text><text x="262" y="178" text-anchor="middle" font-size="10.5" fill="var(--muted)">the model never sees a real password</text></svg></figure>
+          <div class="card-head">
+            <div>
+              <h3><a href="https://github.com/thispc/humanhands">HumanHands</a></h3>
+              <p class="kicker">An assistant that operates a Mac the way a person does</p>
+            </div>
+            <a class="repo" href="https://github.com/thispc/humanhands" aria-label="HumanHands on GitHub"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-gh"/></svg><span class="repo-name">thispc/humanhands</span></a>
+          </div>
+          <p>It reads the screen through the macOS accessibility tree instead of screenshots, so the coordinates are exact and no image of your screen leaves the machine. Then it moves the real cursor along a human path and types at human speed, in any application.</p>
+          <p class="hard"><b>The hard part:</b> keeping passwords away from the model without making it useless. They stay in the Keychain and reach the model only as placeholders, filled in at the last instant after the site has been checked.</p>
+          <p class="stat">Native Swift across 10 SwiftPM targets. 135 tests, run off-device.</p>
+          <ul class="tags"><li>Swift</li><li>SwiftUI</li><li>Accessibility API</li><li>CoreGraphics</li><li>Keychain</li><li>Claude</li></ul>
+        </li>
+        <li class="card">
+          <figure class="fig"><svg class="diagram" viewBox="0 0 520 190" role="img" aria-label="The part that reads mail has no tools; the part with tools only sees a cleaned summary; sending needs one human tap" font-family="var(--mono)"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker></defs><rect x="16" y="70" width="88" height="44" rx="7" fill="var(--bg-3)" stroke="var(--line-2)" stroke-width="1.2"/><text x="60.0" y="96.0" text-anchor="middle" font-size="12" fill="var(--fg)">Mail in</text><line x1="104" y1="92" x2="140" y2="92" stroke="var(--muted)" stroke-width="1.2" marker-end="url(#ah)"/><rect x="140" y="70" width="118" height="44" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2"/><text x="199.0" y="90.0" text-anchor="middle" font-size="12" fill="var(--fg)">Reader</text><text x="199.0" y="104.0" text-anchor="middle" font-size="10.5" fill="var(--muted)">no tools at all</text><line x1="258" y1="92" x2="294" y2="92" stroke="var(--muted)" stroke-width="1.2" marker-end="url(#ah)"/><text x="276.0" y="132" text-anchor="middle" font-size="10.5" fill="var(--muted)">clean summary</text><rect x="294" y="70" width="118" height="44" rx="7" fill="var(--bg-3)" stroke="var(--line-2)" stroke-width="1.2"/><text x="353.0" y="90.0" text-anchor="middle" font-size="12" fill="var(--fg)">Actor</text><text x="353.0" y="104.0" text-anchor="middle" font-size="10.5" fill="var(--muted)">has tools, never raw mail</text><line x1="412" y1="92" x2="448" y2="92" stroke="var(--muted)" stroke-width="1.2" marker-end="url(#ah)"/><rect x="448" y="70" width="60" height="44" rx="7" fill="var(--bg-3)" stroke="var(--line-2)" stroke-width="1.2"/><text x="478.0" y="96.0" text-anchor="middle" font-size="12" fill="var(--fg)">Draft</text><line x1="478" y1="114" x2="478" y2="150" stroke="var(--muted)" stroke-width="1.2" marker-end="url(#ah)"/><rect x="408" y="150" width="100" height="30" rx="7" fill="var(--bg-3)" stroke="var(--line-2)" stroke-width="1.2"/><text x="458.0" y="169.0" text-anchor="middle" font-size="12" fill="var(--fg)">one tap: send</text><text x="199" y="164" text-anchor="middle" font-size="10.5" fill="var(--muted)">a message cannot talk its way into an action</text></svg></figure>
+          <div class="card-head">
+            <div>
+              <h3><a href="https://github.com/thispc/nanoclaw">Personal email agent</a></h3>
+              <p class="kicker">Reads my mail and messages, drafts replies, sends nothing without my tap</p>
+            </div>
+            <a class="repo" href="https://github.com/thispc/nanoclaw" aria-label="Personal email agent on GitHub"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-gh"/></svg><span class="repo-name">thispc/nanoclaw</span></a>
+          </div>
+          <p>Built on the open-source NanoClaw runtime, small enough to audit in an evening. It answers from my phone over iMessage, keeps what it knows about me in plain files I can read and correct, and runs as three background services on my own hardware.</p>
+          <p class="hard"><b>The hard part:</b> anyone who emails me can try to talk the agent into something. So the part that reads mail has no tools, the part with tools never sees raw mail, and every outgoing message stops at a one-tap approval that sends exactly the draft I saw.</p>
+          <p class="stat">Three daemons, running 24/7. iMessage channel and plain-file knowledge base added to the upstream runtime.</p>
+          <ul class="tags"><li>TypeScript</li><li>Node.js</li><li>Claude Agent SDK</li><li>Docker</li><li>SQLite</li></ul>
+        </li>
+        <li class="card">
+          <figure class="fig fig-shot"><img src="/assets/img/trader-assets.jpg" alt="trader-automata: the Assets and Strategies screen, one strategy per instrument with quantity, limit and an on/off switch" width="1600" height="792" loading="lazy" decoding="async"></figure>
+          <div class="card-head">
+            <div>
+              <h3><a href="https://github.com/thispc/trader-automata">trader-automata</a></h3>
+              <p class="kicker">One trade decision, mirrored across many brokerage accounts</p>
+            </div>
+            <a class="repo" href="https://github.com/thispc/trader-automata" aria-label="trader-automata on GitHub"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-gh"/></svg><span class="repo-name">thispc/trader-automata</span></a>
+          </div>
+          <p>What the copy-trading desks in India run: one signal fanned out to many accounts at once. It turned out to be a distributed-systems and compliance problem rather than a trading one. What matters is that every order is traceable and the thing stays up.</p>
+          <p class="hard"><b>The hard part:</b> partial failure is normal. One account rejecting an order must never undo another account's fill, so every child order carries an idempotency key and every step is appended to a ledger, never overwritten.</p>
+          <p class="stat">Paper, connect and live stages. Deployed behind HTTPS on a static IP with a live Angel One account. 33 tests.</p>
+          <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>Next.js</li><li>TypeScript</li><li>Docker</li></ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <section class="section" id="work">
     <div class="wrap reveal">
-      <div class="section-head"><span class="num">02</span><h2>Work</h2></div>
+      <div class="section-head"><span class="num">03</span><h2>Work</h2></div>
       <ol class="timeline">
         <li class="tl-item now">
           <div class="tl-when"><b>Jan 2026</b> to now</div>
@@ -188,67 +245,6 @@
           </div>
         </li>
       </ol>
-    </div>
-  </section>
-
-  <section class="section" id="projects">
-    <div class="wrap reveal">
-      <div class="section-head"><span class="num">03</span><h2>Projects</h2></div>
-      <p class="intro">Four agent systems built in 2026. Each one has a security boundary that is enforced in code rather than in a prompt.</p>
-      <ul class="projects">
-        <li class="card">
-          <div class="card-head">
-            <div>
-              <h3><a href="https://github.com/thispc/devteam">devteam</a></h3>
-              <p class="kicker">A harness of microbots with contracts</p>
-            </div>
-            <a class="repo" href="https://github.com/thispc/devteam" aria-label="devteam on GitHub"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-gh"/></svg><span class="repo-name">thispc/devteam</span></a>
-          </div>
-          <p>My first version rotted. The agents kept editing their own code until every test passed, and afterwards nobody could extend it. You cannot ask code to grade its own homework, so I moved the judging out of reach. A module's contract is its interface: the functions it must expose and what they take and return. That contract is hashed into the module's identity, so changing it makes a different module. The code then builds in a container with no network, twice, and faces tests it never saw.</p>
-          <p class="hard"><b>What is hard:</b> once an agent has read the tests it is judged by, those tests stop telling you anything. The held-out ones caught real bugs the visible suite had passed. For a long time I had only tested the gate a piece at a time, never end to end. So I ran it for real: an AI manager derived the contracts, delegated to worker agents, and shipped every module through the gate without me.</p>
-          <p class="stat">Ran end to end with no human intervention. A content-addressed ledger makes a repeat build a 45 ms cache hit instead of a 6.3 s rebuild.</p>
-          <ul class="tags"><li>Node.js</li><li>TypeScript</li><li>Docker</li><li>Claude Agent SDK</li></ul>
-        </li>
-        <li class="card">
-          <div class="card-head">
-            <div>
-              <h3><a href="https://github.com/thispc/humanhands">HumanHands</a></h3>
-              <p class="kicker">An AI that operates a Mac the way a person does</p>
-            </div>
-            <a class="repo" href="https://github.com/thispc/humanhands" aria-label="HumanHands on GitHub"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-gh"/></svg><span class="repo-name">thispc/humanhands</span></a>
-          </div>
-          <p>It reads the screen through the macOS accessibility tree rather than screenshots, so nothing leaves the machine and the coordinates are exact. Then it moves the real cursor along a human path instead of teleporting it, and types at human speed.</p>
-          <p class="hard"><b>What is hard:</b> keeping passwords away from the model without making it useless. They stay in the Keychain and reach it only as placeholders, swapped in at the last instant. It refuses to type one until it has checked the site is the real one.</p>
-          <p class="stat">Fully native Swift across 10 SwiftPM targets. 135 tests run off-device.</p>
-          <ul class="tags"><li>Swift</li><li>SwiftUI</li><li>Accessibility API</li><li>CoreGraphics</li><li>Keychain</li><li>Claude</li></ul>
-        </li>
-        <li class="card">
-          <div class="card-head">
-            <div>
-              <h3><a href="https://github.com/thispc/nanoclaw">Personal email agent</a></h3>
-              <p class="kicker">A fork of the open-source NanoClaw runtime</p>
-            </div>
-            <a class="repo" href="https://github.com/thispc/nanoclaw" aria-label="nanoclaw fork on GitHub"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-gh"/></svg><span class="repo-name">thispc/nanoclaw</span></a>
-          </div>
-          <p>I wanted something that reads my email and acts for me from my phone. The established options run far more code than I could read in an evening, and they install plugins from a marketplace nobody vets. I built a small one I could audit myself.</p>
-          <p class="hard"><b>What is hard:</b> anyone who emails me can try to talk the agent into something. So the part that reads mail has no tools at all, and the part with tools never sees raw mail. Anything going out stops at a one-tap approval that sends exactly the draft I saw.</p>
-          <p class="stat">Added an iMessage channel and a knowledge base in plain files, so I can read and correct what it knows about me. Three daemons, running 24/7 on my own hardware.</p>
-          <ul class="tags"><li>TypeScript</li><li>Node.js</li><li>Claude Agent SDK</li><li>Docker</li><li>SQLite</li></ul>
-        </li>
-        <li class="card">
-          <div class="card-head">
-            <div>
-              <h3><a href="https://github.com/thispc/trader-automata">trader-automata</a></h3>
-              <p class="kicker">One order, many brokerage accounts</p>
-            </div>
-            <a class="repo" href="https://github.com/thispc/trader-automata" aria-label="trader-automata on GitHub"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-gh"/></svg><span class="repo-name">thispc/trader-automata</span></a>
-          </div>
-          <p>One trade decision mirrored across many brokerage accounts at once, which is what the copy-trading desks in India run. It turned out to be a distributed-systems and compliance problem rather than a trading one: what matters is that every order is traceable and that the thing stays up.</p>
-          <p class="hard"><b>What is hard:</b> partial failure is normal. One account's rejection must never undo another's fill, so every child order carries an idempotency key and every step is appended to a ledger rather than overwritten. India also requires every API order to come from one static IP registered per client.</p>
-          <p class="stat">Paper, connect and live stages. Deployed behind HTTPS on a static IP with a live Angel One account. 33 tests.</p>
-          <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>Next.js</li><li>TypeScript</li><li>Docker</li></ul>
-        </li>
-      </ul>
     </div>
   </section>
 
