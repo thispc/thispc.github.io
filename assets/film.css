@@ -1,0 +1,51 @@
+/* Film treatment, 18 Sep 2026: a portfolio told as a picture. Base layout and components stay in style.css. */
+:root { --accent: #f0b64a; --accent-ink: #1a1207; --accent-soft: rgba(240, 182, 74, 0.12); --accent-glow: rgba(240, 182, 74, 0.22);
+        --bg: #0b0a09; --bg-2: #14120f; --bg-3: #1c1915; --line: #2a2620; --line-2: #3a342b; --fg: #f2ecdf; --fg-2: #d6cfc0; --muted: #9b9384;
+        --poster: "Bebas Neue", "Impact", "Arial Narrow", sans-serif; }
+body { background: radial-gradient(1200px 600px at 20% -10%, rgba(240,182,74,0.08), transparent 60%), var(--bg); }
+.grain { position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.055; mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+/* hero as a title card */
+.film-hero { padding: 0; }
+.film-hero .letterbox { height: 22px; background: #000; }
+.film-hero .wrap { padding: 56px 24px 52px; display: grid; gap: 40px; align-items: center; }
+@media (min-width: 880px) { .film-hero .wrap { grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr); } }
+.title-card .eyebrow { letter-spacing: 0.18em; text-transform: uppercase; font-size: 11.5px; }
+h1.poster { font-family: var(--poster); font-weight: 400; font-size: clamp(64px, 11vw, 132px); line-height: 0.9; letter-spacing: 0.02em; margin: 14px 0 18px; color: var(--fg); text-shadow: 0 0 40px var(--accent-glow); }
+.tagline { font-size: clamp(20px, 2.4vw, 27px); line-height: 1.3; margin: 0 0 16px; color: var(--fg); }
+.tagline em { font-family: var(--display); font-style: italic; color: var(--accent); }
+.now-showing { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: var(--mono); font-size: 12.5px; color: var(--fg-2); margin: 6px 0 22px; padding: 8px 12px 8px 8px; border: 1px solid var(--line-2); border-radius: 999px; background: var(--bg-2); }
+.marquee-label { background: var(--accent); color: var(--accent-ink); font-family: var(--poster); letter-spacing: 0.08em; font-size: 14px; padding: 2px 10px 1px; border-radius: 999px; }
+/* film strip */
+.strip-wrap { position: relative; height: min(560px, 70vh); overflow: hidden; border-radius: 6px; background: #050505; border: 1px solid var(--line-2);
+  box-shadow: var(--shadow); mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent); }
+.strip { list-style: none; margin: 0; padding: 0 28px; display: grid; gap: 14px; animation: reel 38s linear infinite; }
+.strip-wrap::before, .strip-wrap::after { content: ""; position: absolute; top: 0; bottom: 0; width: 20px; z-index: 2;
+  background-image: radial-gradient(rgba(255,255,255,0.0) 0 0), repeating-linear-gradient(to bottom, transparent 0 10px, #e9e2d3 10px 22px, transparent 22px 34px); background-size: 8px 34px; background-repeat: repeat-y; background-position: center; opacity: 0.85; }
+.strip-wrap::before { left: 4px; } .strip-wrap::after { right: 4px; }
+.strip li { position: relative; margin: 0; border-radius: 4px; overflow: hidden; background: #111; aspect-ratio: 16 / 9; }
+.strip li img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.9) contrast(1.05); }
+.strip li span { position: absolute; left: 8px; bottom: 6px; font-family: var(--mono); font-size: 11px; color: var(--accent); background: rgba(0,0,0,0.6); padding: 2px 6px; border-radius: 3px; }
+.strip-wrap:hover .strip { animation-play-state: paused; }
+@keyframes reel { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+@media (prefers-reduced-motion: reduce) { .strip { animation: none; } }
+/* slates */
+.section-head { align-items: baseline; }
+.section-head .num { font-family: var(--poster); font-size: 15px; letter-spacing: 0.16em; color: var(--accent-ink); background: var(--accent); padding: 3px 9px 1px; border-radius: 3px; }
+/* scenes */
+.card { background: linear-gradient(180deg, var(--bg-2), var(--bg)); }
+.fig { position: relative; padding: 14px 14px 10px; background: #050505; border-color: var(--line-2); }
+.fig-shot { padding: 0; }
+.fig::before, .fig::after { content: ""; position: absolute; top: 0; bottom: 0; width: 12px; background: repeating-linear-gradient(to bottom, transparent 0 8px, #d8d0bf 8px 16px, transparent 16px 26px); background-size: 6px 26px; background-repeat: repeat-y; background-position: center; opacity: 0.7; pointer-events: none; }
+.fig::before { left: 0; } .fig::after { right: 0; }
+.fig-shot img { padding: 0 12px; box-sizing: border-box; background: #050505; }
+.frame-no { position: absolute; z-index: 2; top: 8px; left: 20px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--accent); background: rgba(0,0,0,0.65); padding: 3px 7px; border-radius: 3px; }
+.card h3 { font-family: var(--poster); font-weight: 400; font-size: 30px; letter-spacing: 0.03em; }
+.kicker { font-family: var(--display); font-style: italic; font-size: 1.05rem; color: var(--fg-2); }
+.hard { border-left-color: var(--accent); }
+.shot-on { font-family: var(--poster); letter-spacing: 0.16em; font-size: 12px; color: var(--muted); margin: 6px 0 -6px; }
+/* credits */
+#work .section-head h2::after { content: " · in order of appearance"; font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.02em; }
+/* post-credits */
+#contact { background: #000; border-top: 1px solid var(--line); }
+#contact .section-head .num { background: var(--fg); }
