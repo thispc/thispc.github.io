@@ -80,7 +80,7 @@
         <p class="eyebrow"><span class="dot" aria-hidden="true"></span>AI and platform engineer, Eindhoven, Netherlands</p>
         <h1>Pulkit Chawla</h1>
         <p class="lede">I build the load-bearing parts of AI systems: the platform, the pipeline, <em>the gate that decides what ships.</em></p>
-        <p class="sub">Six years on cloud data platforms at Oracle and Qubole, owning services outright. Then an MSc in Data Science and AI at TU Eindhoven. In 2026, four agent systems I built and run myself.</p>
+        <p class="sub">I spent nearly six years on cloud data platforms at Oracle and Qubole, owning services outright, then took an MSc in Data Science and AI at TU Eindhoven. Since then I have built and run four agent systems of my own.</p>
         <div class="actions">
           <a class="btn primary" href="https://github.com/thispc/thispc/raw/main/cv/Pulkit_Chawla_Resume.pdf">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg>
@@ -94,14 +94,14 @@
         </div>
       </div>
 
-      <div class="panel" aria-label="A devteam build, one of my projects, verifying agent-written code">
+      <div class="panel" aria-label="A devteam build verifying agent-written code, one of my projects">
         <div class="panel-head">
-          <span class="title">devteam verify</span>
-          <span class="path">modules/run-tests</span>
-          <span class="state" id="log-state">verifying</span>
-          <button class="replay" id="log-replay" type="button" aria-label="Replay the log">replay</button>
+          <span class="title" aria-hidden="true">devteam verify</span>
+          <span class="path" aria-hidden="true">modules/run-tests</span>
+          <span class="state" id="log-state" aria-hidden="true">verifying</span>
+          <button class="replay" id="log-replay" type="button" aria-label="Replay the build log">replay</button>
         </div>
-        <pre class="log" id="log" aria-live="off"></pre>
+        <pre class="log" id="log" aria-hidden="true"></pre>
       </div>
     </div>
   </section>
@@ -126,32 +126,32 @@
       <div class="section-head"><span class="num">02</span><h2>Work</h2></div>
       <ol class="timeline">
         <li class="tl-item now">
-          <div class="tl-when"><b>2026</b> to now</div>
+          <div class="tl-when"><b>Jan 2026</b> to now</div>
           <div class="tl-body">
             <h3>Independent AI and software engineer</h3>
             <p class="tl-org">Freelance and personal projects, Eindhoven</p>
             <ul>
-              <li>Designed and shipped four agent systems. All four are in Projects below, with source.</li>
+              <li>Designed and shipped four agent systems of my own, each with its source in Projects below, alongside client work.</li>
               <li>Built a WhatsApp AI assistant for an Eindhoven student food-catering business (Twilio, Gemini and Gemma, FastAPI on DigitalOcean). It handles orders, meal selection, leave days and billing questions.</li>
               <li>Built an Instagram reel fact-checker: a FastAPI and RAG backend on a Meta business account. A user forwards a reel and checks its claims in the same thread.</li>
             </ul>
           </div>
         </li>
         <li class="tl-item">
-          <div class="tl-when"><b>2025</b> Jan to Nov</div>
+          <div class="tl-when"><b>Jan 2025</b> to Nov 2025</div>
           <div class="tl-body">
             <h3>Graduate AI Researcher (MSc thesis), MLOps and Computer Vision</h3>
             <p class="tl-org">Eindhoven University of Technology, IMAGEN Programme</p>
             <ul>
               <li>Built the MLOps platform behind IMAGEN, a Dutch government-funded animal-welfare research programme run by TU/e, Wageningen University and Hendrix Genetics.</li>
               <li>Combined ClearML experiment tracking, SLURM scheduling and PiCaS task distribution into one workflow, with reproducible runs in Singularity containers.</li>
-              <li>Wrote a FAIR data pipeline that converts heterogeneous farm video into HDF5 with embedded metadata, raising data-loading throughput and cutting GPU idle time during training.</li>
+              <li>Wrote a FAIR data pipeline that converts heterogeneous farm video into HDF5 with embedded metadata. Training throughput nearly doubled, from 112.3 to 217.4 images per second with eight data-loading workers, because the GPU stopped waiting for data.</li>
               <li>Exposed the pipeline through a web UI and REST API so researchers could fine-tune detection models without logging into the HPC cluster. Per-animal bounding boxes fed behavioural analysis such as feeding-order dominance.</li>
             </ul>
           </div>
         </li>
         <li class="tl-item">
-          <div class="tl-when"><b>2023 to 2024</b> Dec to Dec</div>
+          <div class="tl-when"><b>Dec 2023</b> to Dec 2024</div>
           <div class="tl-body">
             <h3>Software Developer (part-time), Digital Twin Team</h3>
             <p class="tl-org">Eindhoven AI Systems Institute (EAISI), TU/e</p>
@@ -162,7 +162,7 @@
           </div>
         </li>
         <li class="tl-item">
-          <div class="tl-when"><b>2021 to 2023</b> Jan to Aug</div>
+          <div class="tl-when"><b>Jan 2021</b> to Aug 2023</div>
           <div class="tl-body">
             <h3>Member of Technical Staff, Big Data Service</h3>
             <p class="tl-org">Oracle Cloud Infrastructure, Bangalore</p>
@@ -175,7 +175,7 @@
           </div>
         </li>
         <li class="tl-item">
-          <div class="tl-when"><b>2018 to 2020</b> Jan to Dec</div>
+          <div class="tl-when"><b>Jan 2018</b> to Dec 2020</div>
           <div class="tl-body">
             <h3>Software Engineer, then Software Engineer II, Cluster Orchestration</h3>
             <p class="tl-org">Qubole (acquired by Idera), Bangalore</p>
@@ -204,9 +204,9 @@
             </div>
             <a class="repo" href="https://github.com/thispc/devteam" aria-label="devteam on GitHub"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-gh"/></svg><span class="repo-name">thispc/devteam</span></a>
           </div>
-          <p>My first version rotted. The agents kept editing their own code until every test passed, and afterwards nobody could extend it. You cannot ask code to grade its own homework, so I moved the judging out of reach. The contract is hashed into the module's identity, the code runs in a container with no network, twice, and it faces tests it never saw.</p>
-          <p class="hard"><b>What is hard:</b> once an agent has read the tests it is judged by, those tests stop telling you anything. The held-out ones caught real bugs the visible suite had passed. I had also built an excellent courtroom that never held a trial. So I ran one: an AI manager hired its own team and shipped through the gate with no help from me.</p>
-          <p class="stat">356 commits in an end-to-end trial with zero human interventions. Cache hit 45 ms, rebuild 6.3 s.</p>
+          <p>My first version rotted. The agents kept editing their own code until every test passed, and afterwards nobody could extend it. You cannot ask code to grade its own homework, so I moved the judging out of reach. A module's contract is its interface: the functions it must expose and what they take and return. That contract is hashed into the module's identity, so changing it makes a different module. The code then builds in a container with no network, twice, and faces tests it never saw.</p>
+          <p class="hard"><b>What is hard:</b> once an agent has read the tests it is judged by, those tests stop telling you anything. The held-out ones caught real bugs the visible suite had passed. For a long time I had only tested the gate a piece at a time, never end to end. So I ran it for real: an AI manager derived the contracts, delegated to worker agents, and shipped every module through the gate without me.</p>
+          <p class="stat">Ran end to end with no human intervention. A content-addressed ledger makes a repeat build a 45 ms cache hit instead of a 6.3 s rebuild.</p>
           <ul class="tags"><li>Node.js</li><li>TypeScript</li><li>Docker</li><li>Claude Agent SDK</li></ul>
         </li>
         <li class="card">
@@ -230,9 +230,9 @@
             </div>
             <a class="repo" href="https://github.com/thispc/nanoclaw" aria-label="nanoclaw fork on GitHub"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-gh"/></svg><span class="repo-name">thispc/nanoclaw</span></a>
           </div>
-          <p>I wanted something that reads my email and acts for me from my phone. The popular option had critical remote-execution bugs and a skill marketplace where about one package in eight was malicious, so I built a small one I could actually audit.</p>
+          <p>I wanted something that reads my email and acts for me from my phone. The established options run far more code than I could read in an evening, and they install plugins from a marketplace nobody vets. I built a small one I could audit myself.</p>
           <p class="hard"><b>What is hard:</b> anyone who emails me can try to talk the agent into something. So the part that reads mail has no tools at all, and the part with tools never sees raw mail. Anything going out stops at a one-tap approval that sends exactly the draft I saw.</p>
-          <p class="stat">Added an iMessage channel and a plain-file knowledge base (16k lines). Three daemons, 24/7 on my own hardware.</p>
+          <p class="stat">Added an iMessage channel and a knowledge base in plain files, so I can read and correct what it knows about me. Three daemons, running 24/7 on my own hardware.</p>
           <ul class="tags"><li>TypeScript</li><li>Node.js</li><li>Claude Agent SDK</li><li>Docker</li><li>SQLite</li></ul>
         </li>
         <li class="card">
@@ -243,7 +243,7 @@
             </div>
             <a class="repo" href="https://github.com/thispc/trader-automata" aria-label="trader-automata on GitHub"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-gh"/></svg><span class="repo-name">thispc/trader-automata</span></a>
           </div>
-          <p>One trade decision mirrored across many brokerage accounts at once, which is what the copy-trading desks in India run. It turned out to be a distributed-systems and compliance problem rather than a trading one. The moat is reliability and traceability, not clever algorithms.</p>
+          <p>One trade decision mirrored across many brokerage accounts at once, which is what the copy-trading desks in India run. It turned out to be a distributed-systems and compliance problem rather than a trading one: what matters is that every order is traceable and that the thing stays up.</p>
           <p class="hard"><b>What is hard:</b> partial failure is normal. One account's rejection must never undo another's fill, so every child order carries an idempotency key and every step is appended to a ledger rather than overwritten. India also requires every API order to come from one static IP registered per client.</p>
           <p class="stat">Paper, connect and live stages. Deployed behind HTTPS on a static IP with a live Angel One account. 33 tests.</p>
           <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>Next.js</li><li>TypeScript</li><li>Docker</li></ul>
