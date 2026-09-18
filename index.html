@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pulkit Chawla</title>
-<meta name="description" content="Pulkit Chawla, AI and platform engineer in Eindhoven, Netherlands. Six years on cloud data platforms at Oracle and Qubole, MSc Data Science and AI at TU Eindhoven, four agent systems he built and runs himself.">
+<meta name="description" content="Pulkit Chawla, AI and platform engineer in Eindhoven, Netherlands. Six years on cloud data platforms at Oracle and Qubole, MSc Data Science and AI at TU Eindhoven, five systems he built and runs himself.">
 <meta name="author" content="Pulkit Chawla">
 <meta name="theme-color" content="#0f1210">
 <link rel="canonical" href="https://pulkitchawla.me/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pulkit Chawla">
-<meta property="og:description" content="AI and platform engineer in Eindhoven. I build the load-bearing parts of AI systems: the platform, the pipeline, the gate that decides what ships.">
+<meta property="og:description" content="AI and platform engineer in Eindhoven. I build AI systems that run in production: the agents, the platform under them, and the tests that keep them honest.">
 <meta property="og:url" content="https://pulkitchawla.me/">
 <meta property="og:site_name" content="Pulkit Chawla">
 <meta property="og:image" content="https://pulkitchawla.me/assets/og.jpg">
@@ -19,7 +19,7 @@
 <meta property="og:image:alt" content="Pulkit Chawla, AI and platform engineer, Eindhoven">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Pulkit Chawla">
-<meta name="twitter:description" content="AI and platform engineer in Eindhoven. I build the load-bearing parts of AI systems: the platform, the pipeline, the gate that decides what ships.">
+<meta name="twitter:description" content="AI and platform engineer in Eindhoven. I build AI systems that run in production: the agents, the platform under them, and the tests that keep them honest.">
 <meta name="twitter:image" content="https://pulkitchawla.me/assets/og.jpg">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <script>try{var t=localStorage.getItem("theme");if(t==="light"){document.documentElement.setAttribute("data-theme","light")}}catch(e){}document.documentElement.className="js"</script>
@@ -80,7 +80,7 @@
         <p class="eyebrow"><span class="dot" aria-hidden="true"></span>AI and platform engineer, Eindhoven, Netherlands</p>
         <h1>Pulkit Chawla</h1>
         <p class="lede">I build AI systems that run in production: <em>the agents, the platform under them, and the tests that keep them honest.</em></p>
-        <p class="sub">Six years on cloud data platforms at Oracle and Qubole, owning services end to end, then an MSc in Data Science and AI at TU Eindhoven. In 2026 I built and run four agent systems of my own; they are below, with their code.</p>
+        <p class="sub">Six years on cloud data platforms at Oracle and Qubole, owning services end to end, then an MSc in Data Science and AI at TU Eindhoven. In 2026 I built and run five systems of my own; they are below, with their code.</p>
         <div class="actions">
           <a class="btn primary" href="https://github.com/thispc/thispc/raw/main/cv/Pulkit_Chawla_Resume.pdf">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12M6 11l6 6 6-6M4 21h16"/></svg>
@@ -116,7 +116,7 @@
   <section class="section" id="projects">
     <div class="wrap reveal">
       <div class="section-head"><span class="num">02</span><h2>Projects</h2></div>
-      <p class="intro">Four systems built and run in 2026. Each one has a rule that is enforced in code rather than in a prompt: what may ship, what the model may see, what may be sent.</p>
+      <p class="intro">Five systems built and run in 2026. Each one has a rule that is enforced in code rather than in a prompt: what may ship, what the model may see, what may be sent.</p>
       <ul class="projects">
         <li class="card">
           <figure class="fig fig-shot"><img src="/assets/img/devteam-app-run.jpg" alt="A weather app built by the AI team, running: each pipeline piece (parse-place, geocode, forecast, respond) shown with its output and whether it was cached or fetched" width="1600" height="913" loading="lazy" decoding="async"></figure>
@@ -174,6 +174,20 @@
           <p class="stat">Paper, connect and live stages. Deployed behind HTTPS on a static IP with a live Angel One account. 33 tests.</p>
           <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>Next.js</li><li>TypeScript</li><li>Docker</li></ul>
         </li>
+        <li class="card">
+          <figure class="fig fig-shot"><img src="/assets/img/jobhunt-overview.jpg" alt="jobhunt dashboard: countries scanned, days to target and to permit expiry, applications by stage, last scan" width="1600" height="830" loading="lazy" decoding="async"></figure>
+          <div class="card-head">
+            <div>
+              <h3>jobhunt</h3>
+              <p class="kicker">The system running my own job search</p>
+            </div>
+            <span class="repo" aria-label="private repository"><span class="repo-name">private repo</span></span>
+          </div>
+          <p>It scans postings from nine applicant-tracking APIs and the job boards, reconciles employers against the 12,900-entry Dutch sponsor register, tailors the CV to each posting, fills the application forms and tracks every reply and follow-up in one dashboard.</p>
+          <p class="hard"><b>The hard part:</b> keeping it honest. Every line a tailored CV makes must trace back to a verified fact in one profile file, so the system cannot invent a number to match a posting.</p>
+          <p class="stat">Python, FastAPI and SQLite, 250 tests. Playwright drives the forms; a linter blocks generic phrasing before anything is sent.</p>
+          <ul class="tags"><li>Python</li><li>FastAPI</li><li>Playwright</li><li>SQLite</li><li>Claude Code</li></ul>
+        </li>
       </ul>
     </div>
   </section>
@@ -188,7 +202,7 @@
             <h3>Independent AI and software engineer</h3>
             <p class="tl-org">Freelance and personal projects, Eindhoven</p>
             <ul>
-              <li>Designed and shipped four agent systems of my own, each with its source in Projects below, alongside client work.</li>
+              <li>Designed and shipped five systems of my own, each described in Projects below, alongside client work.</li>
               <li>Built a WhatsApp AI assistant for an Eindhoven student food-catering business (Twilio, Gemini and Gemma, FastAPI on DigitalOcean). It handles orders, meal selection, leave days and billing questions.</li>
               <li>Built an Instagram reel fact-checker: a FastAPI and RAG backend on a Meta business account. A user forwards a reel and checks its claims in the same thread.</li>
             </ul>
