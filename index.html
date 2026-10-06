@@ -28,6 +28,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="stylesheet" href="/assets/film.css">
+<link rel="stylesheet" href="/assets/cinema.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Pulkit Chawla","jobTitle":"AI and platform engineer","url":"https://pulkitchawla.me/","email":"mailto:pulkitchawl@gmail.com","sameAs":["https://github.com/thispc","https://linkedin.com/in/pulkitchawla11"],"address":{"@type":"PostalAddress","addressLocality":"Eindhoven","addressCountry":"NL"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Eindhoven University of Technology"},{"@type":"CollegeOrUniversity","name":"Birla Institute of Technology, Mesra"}]}</script>
 </head>
 <body>
@@ -95,6 +96,12 @@
           </a>
           <a class="quiet" href="mailto:pulkitchawl@gmail.com">pulkitchawl@gmail.com</a>
         </div>
+        <ul class="boxoffice" aria-label="At a glance">
+          <li><b>6</b><span>years running cloud data platforms at Oracle and Qubole</span></li>
+          <li><b>200+</b><span>customer accounts on the cluster backend I co-owned</span></li>
+          <li><b>7</b><span>systems of my own, built this year and still running</span></li>
+          <li><b>2025</b><span>MSc in Data Science and AI, TU Eindhoven</span></li>
+        </ul>
       </div>
       <div class="strip-wrap" aria-hidden="true">
         <ul class="strip"><li><img src="/assets/img/pocket-phone.jpg" alt="Pocket" loading="lazy" decoding="async"><span>SC 01</span></li><li><img src="/assets/img/water-chat.jpg" alt="Water" loading="lazy" decoding="async"><span>SC 02</span></li><li><img src="/assets/img/devteam-team-canvas.jpg" alt="devteam" loading="lazy" decoding="async"><span>SC 03</span></li><li><img src="/assets/img/devteam-app-run.jpg" alt="devteam, the app it shipped" loading="lazy" decoding="async"><span>SC 03b</span></li><li><img src="/assets/img/trader-assets.jpg" alt="trader-automata" loading="lazy" decoding="async"><span>SC 06</span></li><li><img src="/assets/img/jobhunt-overview.jpg" alt="jobhunt" loading="lazy" decoding="async"><span>SC 07</span></li><li><img src="/assets/img/water-home.jpg" alt="Water" loading="lazy" decoding="async"><span>SC 02b</span></li><li><img src="/assets/img/pocket-phone.jpg" alt="Pocket" loading="lazy" decoding="async"><span>SC 01</span></li><li><img src="/assets/img/water-chat.jpg" alt="Water" loading="lazy" decoding="async"><span>SC 02</span></li><li><img src="/assets/img/devteam-team-canvas.jpg" alt="devteam" loading="lazy" decoding="async"><span>SC 03</span></li><li><img src="/assets/img/devteam-app-run.jpg" alt="devteam, the app it shipped" loading="lazy" decoding="async"><span>SC 03b</span></li><li><img src="/assets/img/trader-assets.jpg" alt="trader-automata" loading="lazy" decoding="async"><span>SC 06</span></li><li><img src="/assets/img/jobhunt-overview.jpg" alt="jobhunt" loading="lazy" decoding="async"><span>SC 07</span></li><li><img src="/assets/img/water-home.jpg" alt="Water" loading="lazy" decoding="async"><span>SC 02b</span></li></ul>
@@ -105,7 +112,7 @@
 
   <section class="section" id="now">
     <div class="wrap reveal">
-      <div class="section-head"><span class="num">SC 01</span><h2>Now showing</h2></div>
+      <div class="section-head"><span class="num">REEL 1</span><h2>Now showing</h2></div>
       <p class="intro">I'm in Eindhoven, working freelance on agent systems, and looking for a full-time engineering role in the Netherlands.</p>
       <dl class="facts">
         <div><dt>Availability</dt><dd class="ok">Immediate, no notice period</dd></div>
@@ -120,13 +127,14 @@
 
   <section class="section" id="projects">
     <div class="wrap reveal">
-      <div class="section-head"><span class="num">SC 02</span><h2>Scenes</h2></div>
+      <div class="section-head"><span class="num">REEL 2</span><h2>Scenes</h2></div>
       <p class="intro">Seven scenes from this year. Each is a system I built and still run. The frame shows it working; the text says what it does and where it nearly broke.</p>
       <ul class="projects">
-        <li class="card">
+        <li class="card feature">
           <figure class="fig fig-shot"><span class="frame-no" aria-hidden="true">SC 01 · TAKE 1</span><img src="/assets/img/pocket-phone.jpg" alt="Pocket on a phone: the home screen with projects, to-dos and outreach, and a chat where the agent found why a forecast page was slow, fixed it and deployed a preview" width="1600" height="913" loading="lazy" decoding="async"></figure>
           <div class="card-head">
             <div>
+              <p class="feature-badge">Feature presentation</p>
               <h3>Pocket</h3>
               <p class="kicker">My coding agents, run from my phone, with one memory of my work</p>
             </div>
@@ -137,10 +145,11 @@
           <p class="stat">Node.js and SQLite, 15,000 lines, in daily use. A local memory of conversations, dated facts and a short portrait, searched by keywords, local embeddings and a fact graph.</p>
           <p class="shot-on" aria-hidden="true">Shot on</p><ul class="tags"><li>Node.js</li><li>SQLite</li><li>Claude Code</li><li>Codex</li><li>Gemini</li><li>Tailscale</li></ul>
         </li>
-        <li class="card">
+        <li class="card feature">
           <figure class="fig fig-shot"><span class="frame-no" aria-hidden="true">SC 02 · TAKE 1</span><img src="/assets/img/water-chat.jpg" alt="Water, a private AI workspace: a chat that planned a student-budget Saturday in Utrecht, with the Water and Flow modes and the model picker" width="1600" height="913" loading="lazy" decoding="async"></figure>
           <div class="card-head">
             <div>
+              <p class="feature-badge">Feature presentation</p>
               <h3>Water</h3>
               <p class="kicker">A private AI workspace on my Mac: local, rented-GPU or subscription models behind one app</p>
             </div>
@@ -227,7 +236,7 @@
 
   <section class="section" id="work">
     <div class="wrap reveal">
-      <div class="section-head"><span class="num">SC 03</span><h2>Credits</h2></div>
+      <div class="section-head"><span class="num">REEL 3</span><h2>Credits</h2></div>
       <ol class="timeline">
         <li class="tl-item now">
           <div class="tl-when"><b>Jan 2026</b> to now</div>
@@ -297,23 +306,23 @@
 
   <section class="section" id="skills">
     <div class="wrap reveal">
-      <div class="section-head"><span class="num">SC 04</span><h2>Cast and crew</h2></div>
+      <div class="section-head"><span class="num">REEL 4</span><h2>Cast and crew</h2></div>
       <div class="skills">
         <div class="skill">
           <h3>Languages</h3>
-          <p class="shot-on" aria-hidden="true">Shot on</p><ul class="tags"><li>Python</li><li>TypeScript / JavaScript</li><li>Java</li><li>Swift</li><li>SQL</li><li>Bash</li></ul>
+          <ul class="tags"><li>Python</li><li>TypeScript / JavaScript</li><li>Java</li><li>Swift</li><li>SQL</li><li>Bash</li></ul>
         </div>
         <div class="skill">
           <h3>AI and ML</h3>
-          <p class="shot-on" aria-hidden="true">Shot on</p><ul class="tags"><li>LLM agents (Claude Agent SDK)</li><li>RAG and vector search (FAISS)</li><li>LangChain</li><li>PyTorch</li><li>Computer vision (detection, tracking)</li><li>Fine-tuning</li><li>Model serving and inference services</li><li>ClearML</li><li>Prompt-injection defences</li></ul>
+          <ul class="tags"><li>LLM agents (Claude Agent SDK)</li><li>RAG and vector search (FAISS)</li><li>LangChain</li><li>PyTorch</li><li>Computer vision (detection, tracking)</li><li>Fine-tuning</li><li>Model serving and inference services</li><li>ClearML</li><li>Prompt-injection defences</li></ul>
         </div>
         <div class="skill">
           <h3>Big data and cloud</h3>
-          <p class="shot-on" aria-hidden="true">Shot on</p><ul class="tags"><li>Hadoop</li><li>Spark</li><li>Presto</li><li>Hive</li><li>HBase</li><li>AWS</li><li>Azure</li><li>OCI</li><li>Docker</li><li>Kubernetes</li></ul>
+          <ul class="tags"><li>Hadoop</li><li>Spark</li><li>Presto</li><li>Hive</li><li>HBase</li><li>AWS</li><li>Azure</li><li>OCI</li><li>Docker</li><li>Kubernetes</li></ul>
         </div>
         <div class="skill">
           <h3>Backend and tooling</h3>
-          <p class="shot-on" aria-hidden="true">Shot on</p><ul class="tags"><li>FastAPI</li><li>Spring</li><li>Node.js</li><li>Next.js / Nuxt.js</li><li>REST APIs</li><li>SQLAlchemy</li><li>Jenkins</li><li>TeamCity</li><li>GitHub Actions</li><li>CI/CD</li><li>SLURM</li><li>Singularity</li><li>Datadog</li><li>Splunk</li><li>Elasticsearch</li><li>Playwright</li></ul>
+          <ul class="tags"><li>FastAPI</li><li>Spring</li><li>Node.js</li><li>Next.js / Nuxt.js</li><li>REST APIs</li><li>SQLAlchemy</li><li>Jenkins</li><li>TeamCity</li><li>GitHub Actions</li><li>CI/CD</li><li>SLURM</li><li>Singularity</li><li>Datadog</li><li>Splunk</li><li>Elasticsearch</li><li>Playwright</li></ul>
         </div>
       </div>
     </div>
@@ -321,7 +330,7 @@
 
   <section class="section" id="education">
     <div class="wrap reveal">
-      <div class="section-head"><span class="num">SC 05</span><h2>Education</h2></div>
+      <div class="section-head"><span class="num">REEL 5</span><h2>Education</h2></div>
       <ul class="edu">
         <li>
           <h3>MSc Data Science and Artificial Intelligence</h3>
@@ -341,7 +350,7 @@
 
   <section class="section contact" id="contact">
     <div class="wrap reveal">
-      <div class="section-head"><span class="num">SC 06</span><h2>Post-credits scene</h2></div>
+      <div class="section-head"><span class="num">REEL 6</span><h2>Post-credits scene</h2></div>
       <p class="big">Stay for this bit. Email is the fastest way to reach me: <a href="mailto:pulkitchawl@gmail.com">pulkitchawl@gmail.com</a></p>
       <ul class="links">
         <li><a href="https://linkedin.com/in/pulkitchawla11"><svg fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-in"/></svg>linkedin.com/in/pulkitchawla11</a></li>

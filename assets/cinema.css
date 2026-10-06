@@ -1,0 +1,80 @@
+/* Cinema pass, 6 Oct 2026: a projector beam on the title card, box-office figures, reels instead of scene numbers for
+   the sections, and the two newest systems as full-width feature presentations. Loads after film.css. */
+
+/* ---- title card ---- */
+.film-hero { isolation: isolate; }
+.film-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    conic-gradient(from 200deg at 96% -6%, transparent 0deg, rgba(255, 214, 140, 0.11) 16deg, rgba(255, 214, 140, 0.04) 34deg, transparent 52deg),
+    radial-gradient(48% 42% at 76% 42%, rgba(240, 182, 74, 0.09), transparent 72%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent); mask-image: linear-gradient(to bottom, #000 60%, transparent);
+  animation: beam 7s ease-in-out infinite;
+}
+@keyframes beam { 0%, 100% { opacity: 0.9; } 46% { opacity: 1; } 50% { opacity: 0.78; } 54% { opacity: 1; } }
+h1.poster {
+  background: linear-gradient(180deg, #fff8ea 0%, #f2ecdf 45%, #d9c49b 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  text-shadow: none; filter: drop-shadow(0 0 28px rgba(240, 182, 74, 0.28));
+}
+
+/* box office: four facts at a glance */
+.boxoffice { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin: 30px 0 0;
+  border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); }
+.boxoffice li { padding: 14px 14px 12px 0; }
+.boxoffice li + li { padding-left: 14px; }
+.boxoffice li:nth-child(3) { padding-left: 0; }
+.boxoffice b { display: block; font-family: var(--poster); font-weight: 400; font-size: 34px; line-height: 1; letter-spacing: 0.02em; color: var(--accent); }
+.boxoffice span { display: block; margin-top: 4px; font-size: 12.5px; line-height: 1.35; color: var(--muted); }
+@media (min-width: 640px) {
+  .boxoffice { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .boxoffice li, .boxoffice li:nth-child(3) { padding: 16px 16px 14px; }
+  .boxoffice li:first-child { padding-left: 0; }
+  .boxoffice li + li { border-left: 1px solid var(--line); }
+}
+
+/* the reel: brighter frames, a softer fade */
+.strip-wrap { mask-image: linear-gradient(to bottom, transparent, #000 5%, #000 95%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 5%, #000 95%, transparent);
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(240, 182, 74, 0.08), 0 0 60px -10px rgba(240, 182, 74, 0.18); }
+.strip li { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06); }
+.strip li img { filter: none; }
+.strip li span { background: rgba(0, 0, 0, 0.75); border: 1px solid rgba(240, 182, 74, 0.35); }
+
+/* ---- reels: section slates as clapperboards ---- */
+.section-head .num { position: relative; padding: 4px 10px 2px; font-size: 14px; letter-spacing: 0.18em;
+  background-image: repeating-linear-gradient(135deg, var(--accent) 0 7px, #1a1207 7px 9px); background-size: 100% 4px; background-repeat: no-repeat;
+  background-color: var(--accent); background-position: top; padding-top: 7px; }
+.section h2 { font-size: clamp(2.2rem, 5vw, 3.1rem); }
+
+/* ---- scenes ---- */
+.card { overflow: hidden; }
+.fig-shot { overflow: hidden; }
+.fig-shot img { transition: transform 700ms cubic-bezier(.2, .7, .2, 1), filter 700ms ease; }
+.card:hover .fig-shot img { transform: scale(1.025); filter: brightness(1.06); }
+.card:hover { border-color: rgba(240, 182, 74, 0.35); box-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(240, 182, 74, 0.12), 0 0 50px -20px rgba(240, 182, 74, 0.25); }
+
+/* feature presentations: full width, a widescreen frame over the story */
+.feature-badge { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 8px; font-family: var(--poster); font-size: 13px; letter-spacing: 0.2em; color: var(--accent); }
+.feature-badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft), 0 0 14px var(--accent); }
+.card.feature h3 { font-size: 46px; line-height: 1; }
+.card.feature .kicker { font-size: 1.2rem; }
+.card.feature .fig-shot { box-shadow: 0 30px 70px -35px rgba(0, 0, 0, 0.95); }
+@media (min-width: 880px) {
+  .projects .card.feature { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 36px; row-gap: 14px; padding: 26px 30px 28px; }
+  .card.feature > * { grid-column: 1 / -1; }
+  .card.feature > .fig { margin: -8px -12px 10px; }
+  .card.feature > .card-head + p { grid-column: 1; }
+  .card.feature > .hard { grid-column: 2; grid-row: 3; align-self: start; }
+  .card.feature > .stat { grid-column: 1 / -1; }
+}
+/* ---- light theme keeps the cinema, on paper ---- */
+:root[data-theme="light"] .film-hero::after { opacity: 0.5; }
+:root[data-theme="light"] h1.poster { background: linear-gradient(180deg, #3a2a10, #1b1e1c); -webkit-background-clip: text; background-clip: text; filter: none; }
+:root[data-theme="light"] .boxoffice b { color: #a86a0c; }
+
+@media (prefers-reduced-motion: reduce) {
+  .film-hero::after { animation: none; }
+  .fig-shot img { transition: none; }
+  .card:hover .fig-shot img { transform: none; }
+}
